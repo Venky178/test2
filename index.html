@@ -1,1 +1,394 @@
-<h1> venky</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+       <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Entrepreneurship Club</title>
+   <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+.collaborators {
+    width: 100%;  /* Full width */
+    text-align: center;
+    padding: 20px;
+}
+
+.logo-slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+        /* Container */
+        .container {
+            display: flex;
+            width: 100%;
+            min-height: 100vh;
+        }
+
+        /* Left Column - Logo Section */
+        .left-column {
+            width: 100%;
+            background: linear-gradient(to right, #1c2b38, #2980b9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .club-logo {
+            width: 150px; /* Set fixed width */
+            height: 150px; /* Set fixed height */
+            object-fit: cover; /* Ensures it maintains shape */
+            border-radius: 50%;
+            border: 3px solid white;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .club-logo:hover {
+            transform: scale(1.1);
+        }
+/* Carousel Styling */
+.carousel {
+    width: 100%;
+    max-width: 800px; /* Adjust width as needed */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.carousel img {
+    width: 100%;
+    max-height: 400px; /* Limits image height */
+    object-fit: cover; /* Prevents stretching */
+    border-radius: 10px; /* Optional: Rounded corners */
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Active image styling */
+.carousel img:not(.active) {
+    display: none;
+}
+
+/* Responsive Fixes */
+@media (max-width: 768px) {
+    .carousel img {
+        max-height: 250px; /* Smaller height on mobile */
+    }
+}
+
+        .club-name {
+            font-size: 2rem;
+            font-weight: bold;
+            color: white;
+            margin-top: 15px;
+        }
+
+        /* Right Column - Content */
+        .right-column {
+            width: 100%;
+            padding: 50px;
+            background: #ffffff;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #1c2b38;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 20px;
+            max-width: 600px;
+        }
+
+        /* Sections */
+        section {
+            width: 100%;
+            max-width: 750px;
+            margin-bottom: 30px;
+            padding: 25px;
+            border-radius: 12px;
+            background: #fff;
+            text-align: left;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+
+        section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 6px 14px rgba(0, 0, 0, 0.15);
+        }
+
+        h2 {
+            color: #2980b9;
+            border-bottom: 3px solid #2980b9;
+            padding-bottom: 6px;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        /* Team Section */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .team-member {
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            background: #f9f9f9;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .team-member:hover {
+            transform: scale(1.05);
+        }
+
+        .team-member img {
+            width: 120px; /* Fix image size */
+            height: 120px; /* Keep square */
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid white;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1000px) {
+            .container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .left-column, .right-column {
+                width: 100%;
+                padding: 20px;
+            }
+            .club-logo {
+                width: 130px;
+                height: 130px;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            .club-logo {
+                width: 100px;
+                height: 100px;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+
+.logo-slider img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease; /* Add a nice hover effect */
+}
+@media (max-width: 600px) {
+    .logo-slider img {
+        width: 80%;  /* Scale images for mobile screens */
+    }
+}
+
+/* Media query for tablets (601px - 1024px) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .logo-slider img {
+        width: 60%;  /* Adjust the size for tablets */
+    }
+}
+
+/* Media query for larger screens (1025px and above, typically laptops and desktops) */
+@media (min-width: 1025px) {
+    .logo-slider img {
+        width: 200px;  /* Set a fixed size for larger screens */
+    }
+}
+    </style>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="left-column"> 
+        <img src="https://res.cloudinary.com/dquzbvmbe/image/upload/v1739247951/Snapinst.app_475174310_17850852699390339_1437698077645631765_n_1080_mjwwak.jpg" alt="Club Logo" class="club-logo">
+        <div class="a">
+            <a href="https://www.linkedin.com/company/engineering-entrepreneurship-club-at-fau/" target="_blank">
+                <span class="club-name">Engineering Entrepreneurship Club</span>
+            </a>
+        </div>
+    </div>
+    
+
+        <!-- Right Column -->
+        <div class="right-column">
+            
+            <p class="tagline">A student-led organization bridging the gap between Ideas, Projects, Marketing, and Investment.</p>
+            
+            <section class="events">
+                <h2>Upcoming Events</h2>
+                <p>Stay updated with the latest entrepreneurship club events, workshops, and networking opportunities.</p>
+                <a href="event.html" class="event-button">View Events</a>
+            </section>
+
+  <section class="about">
+                <h2>About Us</h2>
+                <p>The club is a student-led initiative focused on entrepreneurship. Our vision is to launch impactful startups and prepare students for the industry.</p>
+                <p>Our mission is to provide education, practice, and investment opportunities, giving members real-world startup exposure in a controlled academic setting.</p>
+            </section>
+            
+            <section class="impact">
+                <h2>Our Impact</h2>
+                <p>✅ <strong>30+</strong> Members</p>
+                <p>✅ <strong>4+ Startup Ideas</strong></p>
+                <p>✅ Regular Startup Meetups & Investor Pitches</p>
+                
+               <div class="carousel">
+                
+                    <img src="https://res.cloudinary.com/dquzbvmbe/image/upload/v1739247832/Snapinst.app_475891596_17851661496390339_9050164206480331609_n_1080_adorza.jpg" alt="Club Event" class="active">
+                    <img src="https://res.cloudinary.com/dh9gs449u/image/upload/v1739203664/c2_pukhm6.jpg" alt="Brainstorming Session">
+                    <img src="https://res.cloudinary.com/dh9gs449u/image/upload/v1739203663/c3_whtjkc.jpg" alt="Club Event" class="active">
+            
+                </div>
+            </section>
+
+            <section class="collaborators">
+                <h2>Our Collaborators</h2>
+                <div class="logo-slider">
+                    <img src="https://res.cloudinary.com/dl9562i0a/image/upload/v1739172645/FAU_xwskqm.png" alt="FAU">
+                    <img src="https://res.cloudinary.com/dl9562i0a/image/upload/v1739172644/Tech-Runway_pa0leo.png" alt="FAU TechRunway">
+                </div>
+            </section>
+<section class="group">
+                <h2>Our Advisor</h2>
+                <div class="team-grid">
+                    <div class="team-member">
+                    <img src="https://res.cloudinary.com/dquzbvmbe/image/upload/v1739246651/image_1_l1g5h5.png" alt="Advisor">
+                    <li className="a" ><a href="https://www.linkedin.com/in/harikalva/">Dr.Hari Kalva Chairperson and Department of Electrical Engineering and Computer Science</a></li>
+                    
+                    </div>
+                
+<div class="team-member">
+                        <img src="https://res.cloudinary.com/dquzbvmbe/image/upload/v1739246669/image_2_g2nbos.png" alt="Advisor">
+                        <li className="a" ><a href="https://www.linkedin.com/in/fkoch/">Fernando Koch Ph.D Research Professor, Department of Electrical Engineering and Computer Science</a></li>
+                       
+</div>
+</div>
+</section>
+<section class="group">
+                <h2>Our Team</h2>
+                <div class="team-grid">
+                    
+                    <div class="team-member">
+                        <img src="https://res.cloudinary.com/dh9gs449u/image/upload/v1739203663/c4_etztr4.jpg" alt="President">
+                        <li className="a" ><a href="https://www.linkedin.com/in/sumedh-vyk-842a49295/">Sumedh</a></li>
+                        
+                    </div>
+ <div class="team-member">
+                        <img src="https://res.cloudinary.com/dh9gs449u/image/upload/v1739203663/vp_cqsfag.png" alt="Vice President">
+                        <li className="a" ><a href="https://www.linkedin.com/in/shiva-prasad-vangala/">Shiva Prasad</a></li>
+                        
+                    </div>
+
+ <div class="team-member">
+                        <img src="https://res.cloudinary.com/dh9gs449u/image/upload/v1739203663/tr_tiqxan.png" alt="Treasurer">
+                        <li className="a" ><a href="https://www.linkedin.com/in/raghu-yashwanth-757a89181/">Yashwanth</a></li>
+                        
+                        
+                    </div>
+ <div class="team-member">
+                        <img src="https://res.cloudinary.com/dh9gs449u/image/upload/v1739203667/glasses_pilla_qsob4t.jpg" alt="Harshika">
+                        <li className="a" ><a href="https://www.linkedin.com/in/makloor-harshika-149a12207/">Harshika</a></li>
+                        
+                        
+                    </div>
+ <div class="team-member">
+                        <img src="https://res.cloudinary.com/dh9gs449u/image/upload/v1739203664/glasses_pilla_thoka_rb29es.jpg" alt="Saketh Reddy">
+                        <li className="a" ><a href="https://www.linkedin.com/in/saketh-reddy-b03134227/">Saketh</a></li>
+                        
+                    </div>
+
+ <div class="team-member">
+                        <img src="https://res.cloudinary.com/dh9gs449u/image/upload/v1739203664/bi_antha_hzpiu2.jpg" alt="Padma Latha">
+                        <li className="a" ><a href="https://www.linkedin.com/in/padma-latha-pidaparthi-378421306/">Padma Latha</a></li>
+                
+                    </div>
+
+  <div class="team-member">
+                        <img src="https://res.cloudinary.com/dh9gs449u/image/upload/v1739204638/neh_mguxet.png" alt="Nehansh">
+                        <li className="a" ><a href="https://www.linkedin.com/in/nehansh-alwala-9b0445250/">Nehansh</a></li>
+                
+                    </div>
+
+ <div class="team-member">
+                        <img src="https://res.cloudinary.com/dh9gs449u/image/upload/v1739203663/hero_tgc8jz.jpg" alt="Venkatesh Reddy">
+                        <li className="a" ><a href="https://www.linkedin.com/in/venkateshreddyningam/">Venkatesh</a></li>
+                    </div>
+
+ <div class="team-member">
+                        <img src="https://res.cloudinary.com/dquzbvmbe/image/upload/v1739234944/fdi1t5w7m8rjpo3j3et1.jpg" alt="Srikanth">
+                        <li className="a" ><a href="https://www.linkedin.com/in/laxmi-srikanth-badugu-880b73202/">Srikanth</a></li>
+                    </div>
+<div class="team-member">
+                        <img src="https://res.cloudinary.com/dquzbvmbe/image/upload/v1739239004/WhatsApp_Image_2025-02-11_at_02.44.04_7797bf1f_eanz2u.jpg" alt="Akshaay Gupta">
+                        <li className="a" ><a href="https://www.linkedin.com/in/akshay-gangishetti-a87387277/">Akshay</a></li>
+</div>
+                    <!-- Add more team members here -->
+                </div>
+            </section>
+        </div>
+    </div>
+<script>
+        // Carousel Functionality
+        let currentIndex = 0;
+        const images = document.querySelectorAll('.carousel img');
+        const totalImages = images.length;
+
+        function showNextImage() {
+            images[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + 1) % totalImages;
+            images[currentIndex].classList.add('active');
+        }
+
+        setInterval(showNextImage, 3000); // Change image every 3 seconds
+    </script>
+</body>
+</html>
